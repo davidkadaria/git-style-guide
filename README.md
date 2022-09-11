@@ -1,14 +1,12 @@
 # Git Style Guide
-
-This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
-Kernel*](https://kernel.org/doc/html/latest/process/submitting-patches.html),
-the [git man pages](http://git-scm.com/doc) and various practices popular
-among the community.
+# Git-ის სტილისტიკის სახელმძღვანელო
 
 Translations are available in the following languages:
+წინამდებარე სახელმძღვანელოს თარგმანები ხელმისაწვდომია შემდეგ ენებზე:
 
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
+* [English](https://github.com/agis/git-style-guide)
 * [French](https://github.com/pierreroth64/git-style-guide)
 * [German](https://github.com/runjak/git-style-guide)
 * [Greek](https://github.com/grigoria/git-style-guide)
@@ -23,30 +21,40 @@ Translations are available in the following languages:
 * [Turkish](https://github.com/CnytSntrk/git-style-guide)
 * [Ukrainian](https://github.com/denysdovhan/git-style-guide)
 
-If you feel like contributing, please do so! Fork the project and open a pull
-request.
-
 # Table of contents
+# სარჩევი
 
-1. [Branches](#branches)
-2. [Commits](#commits)
-  1. [Messages](#messages)
-3. [Merging](#merging)
-4. [Misc.](#misc)
+- [Git Style Guide](#git-style-guide)
+- [Git-ის სტილისტიკის სახელმძღვანელო](#git-ის-სტილისტიკის-სახელმძღვანელო)
+- [Table of contents](#table-of-contents)
+- [სარჩევი](#სარჩევი)
+  - [Branches](#branches)
+  - [განშტოებები (Branches)](#განშტოებები-branches)
+  - [Commits](#commits)
+    - [Messages](#messages)
+  - [Merging](#merging)
+  - [Misc.](#misc)
+- [License](#license)
+- [Credits](#credits)
 
 ## Branches
+## განშტოებები (Branches)
 
 * Choose *short* and *descriptive* names:
+* შეარჩიეთ *მოკლე* და *აღწერითი* სახელები:
 
   ```shell
-  # good
+  # good # კარგია
   $ git checkout -b oauth-migration
-  # bad - too vague
+
+  # bad - too vague # ცუდია - ძალიან ბუნდოვანია
   $ git checkout -b login_fix
   ```
 
 * Identifiers from corresponding tickets in an external service (eg. a GitHub
   issue) are also good candidates for use in branch names. For example:
+* იდენტიფიკატორები შესაბამისი გარე სერვისებიდან (მაგ. Github issue),
+  ასევე მშვენიერი კანდიტატები არიან განშტოების სახელებში გამოსაყენებლად. მაგალითად:
 
   ```shell
   # GitHub issue #15
@@ -55,31 +63,43 @@ request.
 
 * Use lowercase in branch names. External ticket identifiers with uppercase
   letters are a valid exception. Use *hyphens* to separate words.
+* განშტოების სახელთა ჩაწერისათვის გამოიყენეთ პატარა ასოები. გარე სერვისთა იდენტიფიკატორების დიდი ასოებით ჩაწერა დასაშვები გამონაკლისია.
+  სიტყვების ერთმანეთისგან გამოსაყოფად გამოიყენეთ ტირეები.
 
   ```shell
-  $ git checkout -b new-feature      # good
-  $ git checkout -b T321-new-feature # good (Phabricator task id)
-  $ git checkout -b New_Feature      # bad
+  $ git checkout -b new-feature      # good # კარგია
+  $ git checkout -b T321-new-feature # good (Phabricator task id) # კარგია (Phabricator task id)
+  $ git checkout -b New_Feature      # bad # ცუდია
   ```
 
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
   Use the following naming convention:
+* როდესაც *ერთ* ფუნქციონალზე რამდენიმე ადამიანი მუშაობს, შესაძლოა მოსახერხებელი იყოს,
+  თუკი თითოეულს გამოუყოფთ *პირად* განშტოებას და ცალკე გექნებათ *მთელი გუნდისათვის საერთო* განშტოება.
+  გამოიყენეთ შემდეგი სახელდების კანონზომიერება:
 
   ```shell
-  $ git checkout -b feature-a/main # team-wide branch
-  $ git checkout -b feature-a/maria  # Maria's personal branch
-  $ git checkout -b feature-a/nick   # Nick's personal branch
+  $ git checkout -b feature-a/main # team-wide branch # მთელი გუნდისათვის საერთო განშტოება
+  $ git checkout -b feature-a/maria  # Maria's personal branch # მარიას პირადი განშტოება
+  $ git checkout -b feature-a/nick   # Nick's personal branch # ნიკის პირადი განშტოება
   ```
 
   Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
   Eventually, the team-wide branch will be merged to "main".
+  სურვილისამებრ მოახდინეთ პირადი განშტოებების შერწყმა მთელი გუნდისათვის საერთო განშტოებასთან (იხ. [„შერწყმა“](#merging)).
+  საბოლოოდ, მთელი გუნდისათვის საერთო განშტოება შეერწყმება მთავარ („main“) განშტოებას.
 
 * Delete your branch from the upstream repository after it's merged, unless
   there is a specific reason not to.
 
   Tip: Use the following command while being on "main", to list merged
   branches:
+* შერწყმის შემდეგ წაშალეთ განშტოება,
+  თუკი აღარ აპირებთ მის გამოყენებას.
+
+  რჩევა: მთავარ („main“) ბრენჩზე ყოფნისას გაუშვით შემდეგი ბრძანება, რათა ნახოთ შერწყმული
+  განშტოებები:
 
   ```shell
   $ git branch --merged | grep -v "\*"
@@ -115,6 +135,7 @@ holds true that you should apply all of the above *before* pushing it.
   ```shell
   # good
   $ git commit
+
   # bad
   $ git commit -m "Quick fix"
   ```
@@ -132,6 +153,7 @@ holds true that you should apply all of the above *before* pushing it.
   ```shell
   # good - imperative present tense, capitalized, fewer than 50 characters
   Mark huge records as obsolete when clearing hinting faults
+
   # bad
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
@@ -146,6 +168,7 @@ holds true that you should apply all of the above *before* pushing it.
 
   ```text
   Short (50 chars or fewer) summary of changes
+
   More detailed explanatory text, if necessary. Wrap it to
   72 characters. In some contexts, the first
   line is treated as the subject of an email and the rest of
@@ -153,16 +176,22 @@ holds true that you should apply all of the above *before* pushing it.
   summary from the body is critical (unless you omit the body
   entirely); tools like rebase can get confused if you run
   the two together.
+
   Further paragraphs come after blank lines.
+
   - Bullet points are okay, too
+
   - Use a hyphen or an asterisk for the bullet,
     followed by a single space, with blank lines in
     between
+
   The pointers to your related resources can serve as a footer
   for your commit message. Here is an example that is referencing
   issues in a bug tracker:
+
   Resolves: #56, #78
   See also: #12, #34
+
   Source: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
@@ -230,6 +259,7 @@ holds true that you should apply all of the above *before* pushing it.
   ```shell
   # good - ensures that a merge commit is created
   $ git merge --no-ff my-branch
+
   # bad
   $ git merge my-branch
   ```
