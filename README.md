@@ -31,6 +31,7 @@ Translations are available in the following languages:
   - [Branches](#branches)
   - [განშტოებები (Branches)](#განშტოებები-branches)
   - [Commits](#commits)
+  - [Commit-ები](#commit-ები)
     - [Messages](#messages)
   - [Merging](#merging)
   - [Misc.](#misc)
@@ -106,6 +107,7 @@ Translations are available in the following languages:
   ```
 
 ## Commits
+## Commit-ები
 
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
@@ -113,20 +115,36 @@ Translations are available in the following languages:
 
   *Tip: Use `git add -p` to interactively stage specific portions of the
   modified files.*
+* თითოეული commit-ი უნდა წარმოადგენდეს ერთ *ლოგიკურ ცვლილებას*. ნუ გააერთიანებთ რამდენიმე *ლოგიკურ ცვლილებას* ერთ commit-ში.
+  მაგალითად, თუ გამოასწორეთ ხარვეზი და გააუმჯობესეთ წარმადობა,
+  უმჯობესია ცვლილებები დაყოთ ორ დამოუკიდებელ commit-ად.
+
+  *რჩევა: გამოიყენეთ `git add -p` [ბრძანება] მოდიფიცირებულ ფაილთა ცალკეული ნაწილების
+  ინტერაქტიულად ორგანიზებისათვის.*
 
 * Don't split a single *logical change* into several commits. For example,
   the implementation of a feature and the corresponding tests should be in the
   same commit.
+* არ დაყოთ ერთი *ლოგიკური ცვლილება* რამდენიმე commit-ად. მაგალითად,
+  ფუნქციონალის რეალიზაცია და [მისთვის] სათანადო ტესტები უნდა გაერთიანდეს ერთსა და იმავე
+  commit-ში.
 
 * Commit *early* and *often*. Small, self-contained commits are easier to
   understand and revert when something goes wrong.
+* განახორციელეთ commit-ები *დროულად* და *ხშირად*. მოკლე, თვითმყოფადი commit-ები მეტად მარტივად გასაგებია და
+  ამარტივებს უწინდელ მდგომარეობაში დაბრუნებას, თუკი რაიმე არასწორად მოხდება.
 
 * Commits should be ordered *logically*. For example, if *commit X* depends
   on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+* commit-ები *ლოგიკური* თანმიმდევრობით უნდა განხორციელდეს. მაგალითად, თუ *commit X* დამოკიდებულია
+  *commit Y*-ში შესრულებულ ცვლილებებზე, მაშინ *commit Y* უნდა განხორციელდეს *commit X*-ამდე.
 
 Note: While working alone on a local branch that *has not yet been pushed*, it's
 fine to use commits as temporary snapshots of your work. However, it still
 holds true that you should apply all of the above *before* pushing it.
+შენიშვნა: ვიდრე მარტო მუშაობთ ადგილობრივ (*ლოკალურ*) განშტოებაზე, რომლის *ატვირთვაც (push) ჯერ არ მომხდარა*,
+დასაშვებია commit-ების, როგორც თქვენი სამუშაოს დროებითი ჩანაწერების, გამოყენება. თუმცა,
+ისევ და ისევ მართებულია ზემოთ მოყვანილი რეკომენდაციების დაცვა, *ვიდრე* ატვირთვას განახორციელებდეთ.
 
 ### Messages
 
