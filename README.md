@@ -33,6 +33,7 @@ Translations are available in the following languages:
   - [Commits](#commits)
   - [Commit-ები](#commit-ები)
     - [Messages](#messages)
+    - [შეტყობინებები](#შეტყობინებები)
   - [Merging](#merging)
   - [Misc.](#misc)
 - [License](#license)
@@ -147,32 +148,41 @@ holds true that you should apply all of the above *before* pushing it.
 ისევ და ისევ მართებულია ზემოთ მოყვანილი რეკომენდაციების დაცვა, *ვიდრე* ატვირთვას განახორციელებდეთ.
 
 ### Messages
+### შეტყობინებები
 
 * Use the editor, not the terminal, when writing a commit message:
+* როდესაც წერთ commit-ის აღწერას, ბრძანებათა სტრიქონის (*ტერმინალის*) ნაცვლად გამოიყენეთ რედაქტორი:
 
   ```shell
-  # good
+  # good # კარგია
   $ git commit
 
-  # bad
+  # bad # ცუდია
   $ git commit -m "Quick fix"
   ```
 
   Committing from the terminal encourages a mindset of having to fit everything
   in a single line which usually results in non-informative, ambiguous commit
   messages.
+  ბრძანებათა სტრიქონის (*ტერმინალის*) გამოყენება commit-ისთვის გზღუდავთ - გიწევთ ყველაფრის ერთ ხაზში ჩატევა,
+  რაც, ჩვეულებრივ, შეტყობინებებს არაინფორმაციულსა და
+  ბუნდოვანს ხდის.
 
 * The summary line (ie. the first line of the message) should be
   *descriptive* yet *succinct*. Ideally, it should be no longer than
   *50 characters*. It should be capitalized and written in imperative present
   tense. It should not end with a period since it is effectively the commit
   *title*:
+* სათაური (ანუ შეტყობინების პირველი ხაზი) უნდა იყოს
+  *აღწერითი*, მაგრამ *ლაკონიური*. იდეალურ შემთხვევაში იგი უნდა შედგებოდეს
+  არაუმეტეს *50 სიმბოლოსაგან*. ჩანაწერი უნდა იწყებოდეს დიდი ასოთი და დაიწეროს იმპერატიულ (*ბრძანებით*) აწმყო დროში.
+  ბოლოში წერტილს ნუ დასვამთ, რადგან, ფაქტობრივად *სათაურს* წერთ:
 
   ```shell
-  # good - imperative present tense, capitalized, fewer than 50 characters
+  # good - imperative present tense, capitalized, fewer than 50 characters # კარგია - ბრძანებითი აწმყო დროშია, დიდი ასოთი იწყება, შედგება 50-ზე ნაკლები სიმბოლოსაგან
   Mark huge records as obsolete when clearing hinting faults
 
-  # bad
+  # bad # ცუდია
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
@@ -180,12 +190,18 @@ holds true that you should apply all of the above *before* pushing it.
   description. It should be wrapped to *72 characters* and explain *why*
   the change is needed, *how* it addresses the issue and what *side-effects*
   it might have.
+* ამის შემდეგ უნდა მოდიოდეს ცარიელი სტრიქონი, რომელსაც მოსდევს უფრო საგულდაგულო აღწერა.
+  აღწერა უნდა შედგებოდეს მაქსიმუმ *72 სიმბოლოსაგან* და უნდა განმარტავდეს,
+  თუ *რატომ* იყო საჭირო ცვლილებები, *როგორ* მოხდა პრობლემის გადაჭრა და
+  რა *გვერდითი მოვლენები* შეიძლება მოჰყვეს ამას. 
 
   It should also provide any pointers to related resources (eg. link to the
   corresponding issue in a bug tracker):
+  საგულდაგულო აღწერაში ასევე მოცემული უნდა იყოს ინფორმაცია შესაბამისი რესურსების შესახებ (მაგ. შესაბამისი შეცდომის/პრობლემის (*issue*) ბმული):
 
   ```text
   Short (50 chars or fewer) summary of changes
+  ცვლილებათა მოკლე (50 სიმბოლო ან ნაკლები) შეჯამება
 
   More detailed explanatory text, if necessary. Wrap it to
   72 characters. In some contexts, the first
@@ -194,10 +210,19 @@ holds true that you should apply all of the above *before* pushing it.
   summary from the body is critical (unless you omit the body
   entirely); tools like rebase can get confused if you run
   the two together.
+  უფრო დეტალურად განმარტებითი ტექსტი, ასეთის საჭიროების შემთხვევაში. ჩაატიეთ 72 სიმბოლოში.
+  ზოგიერთ კონტექსტში, პირველი ხაზი განიხილება როგორც ელ. ფოსტის საკითხი (subject),
+  ხოლო დანარჩენი ტექსტი - როგორც [ელ. ფოსტის] შეტყობინების ტანი.
+  ცარიელი სტრიქონი, რომელიც მოკლე შეჯამებასა და ვრცელ განმარტებას ერთმანეთისაგან გამოყოფს კრიტიკულად მნიშვნელოვანია
+  (თუკი ვრცელ განმარტებას სრულად არ გამოტოვებთ);
+  ინსტრუმენტებმა, როგორიცაა „rebase“, შეიძლება არასწორად მოახდინონ რეაგირება,
+  თუკი გამყოფი (ცარიელი) სტრიქონი არ არის მოცემული.
 
   Further paragraphs come after blank lines.
+  დამატებითი აბზაცები გამოყოფილია ცარიელი სტრიქონებით.
 
   - Bullet points are okay, too
+  - მსხვილი წერტილებიც დასაშვებია
 
   - Use a hyphen or an asterisk for the bullet,
     followed by a single space, with blank lines in
