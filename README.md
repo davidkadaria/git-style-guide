@@ -230,6 +230,8 @@ holds true that you should apply all of the above *before* pushing it.
 
   Ultimately, when writing a commit message, think about what you would need
   to know if you run across the commit in a year from now.
+  ბოლოს და ბოლოს, როდესაც commit-ის შეტყობინებას წერთ, დაფიქრდით იმაზე,
+  თუ რისი ცოდნა შეიძლება დაგჭირდეთ, თუკი ამ commit-ს ერთ წელიწადში წააწყდებით.
 
 * If a *commit A* depends on *commit B*, the dependency should be
   stated in the message of *commit A*. Use the SHA1 when referring to
@@ -237,6 +239,12 @@ holds true that you should apply all of the above *before* pushing it.
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
   also be stated in the message of *commit A*.
+* თუ *commit A* დამოკიდებულია *commit B*-ზე,
+  დამოკიდებულება უნდა უნდა აღიწეროს *commit A*-ს შეტყობინებაში.
+  commit-ებზე მითითებისას გამოიყენეთ SHA1-ჰეში.
+
+  ანალოგიურად, თუ *commit A* წვეტს *commit B*-ს მიერ შექმნის პრობლემას,
+  ეს ასევე უნდა აღიწეროს *commit A*-ს შეტყობინებაში.
 
 * If a commit is going to be squashed to another commit use the `--squash` and
   `--fixup` flags respectively, in order to make the intention clear:
