@@ -255,6 +255,14 @@ holds true that you should apply all of the above *before* pushing it.
 
   *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
   squashed automatically.)*
+* თუკი commit-ი უნდა გაერთიანდეს (*squash*) სხვა commit-თან, გამოიყენეთ `--squash` და
+  `--fixup` არგუმენტები სათანადოდ, რათა [თქვენი] მიზანი უფრო ნათელი გახადოთ:
+
+  ```shell
+  $ git commit --squash f387cab2
+  ```
+
+  (რჩევა: *Rebasing*-ის დროს გამოიყენეთ `--autosquash` არგუმენტი. [ამით] მონიშნული commit-ები ავტომატურად გაერთიანდება.)
 
 ## Merging
 
