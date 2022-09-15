@@ -29,18 +29,19 @@ Translations are available in the following languages:
 - [Table of contents](#table-of-contents)
 - [სარჩევი](#სარჩევი)
   - [Branches](#branches)
-  - [განშტოებები (Branches)](#განშტოებები-branches)
+  - [განშტოებები (*Branches*)](#განშტოებები-branches)
   - [Commits](#commits)
   - [Commit-ები](#commit-ები)
     - [Messages](#messages)
     - [შეტყობინებები](#შეტყობინებები)
   - [Merging](#merging)
+  - [შერწყმა (*Merging*)](#შერწყმა-merging)
   - [Misc.](#misc)
 - [License](#license)
 - [Credits](#credits)
 
 ## Branches
-## განშტოებები (Branches)
+## განშტოებები (*Branches*)
 
 * Choose *short* and *descriptive* names:
 * შეარჩიეთ *მოკლე* და *აღწერითი* სახელები:
@@ -262,32 +263,48 @@ holds true that you should apply all of the above *before* pushing it.
   $ git commit --squash f387cab2
   ```
 
-  (რჩევა: *Rebasing*-ის დროს გამოიყენეთ `--autosquash` არგუმენტი. [ამით] მონიშნული commit-ები ავტომატურად გაერთიანდება.)
+  (რჩევა: *Rebasing*-ის დროს გამოიყენეთ `--autosquash` არგუმენტი.
+  [ამით,] მონიშნული commit-ები ავტომატურად გაერთიანდება.)
 
 ## Merging
+## შერწყმა (*Merging*)
 
 * **Do not rewrite published history.** The repository's history is valuable in
   its own right and it is very important to be able to tell *what actually
   happened*. Altering published history is a common source of problems for
   anyone working on the project.
+* **ნუ მოახდენთ გამოქვეყნებული ისტორიის ცვლილებას.** საცავის (*repository*) ისტორია თავისთავად ღირებულია და
+  ძალიან მნიშვნელოვანია, რომ შეგეძლოთ დანახვა იმისა, *თუ რა მოხდა სინამდვილეში*.
+  გამოქვეყნებული ისტორიის ცვლილება პრობლემათა საერთო წყაროა ყველასთვის,
+  ვინც პროექტზე მუშაობს.
 
 * However, there are cases where rewriting history is legitimate. These are
   when:
+* თუმცა, არსებობს შემთხვევები, როდესაც ისტორიაში ცვლილების შეტანა ლეგიტიმურია.
+  მაგალითად:
 
   * You are the only one working on the branch and it is not being reviewed.
+  * როდესაც განშტოებაზე მხოლოდ თქვენ მუშაობთ და მისი (განშტოების) განხილვა არ მოხდება.
 
   * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
     the "main" in order to merge it later.
+  * როდესაც გსურთ, რომ მოაწესრიგოთ თქვენი განშტოება (მაგ. გააერთიანოთ commit-ები) ან/და ახდენთ მის რებაზირებას
+    „main“ განშტოებაზე, რათა მოგვიანებით მოახდინოთ შერწყმა.
 
   That said, *never rewrite the history of the "main" branch* or any other
   special branches (ie. used by production or CI servers).
+  ასე რომ, *არასოდეს შეიტანოთ ცვლილება „main“ განშტოების ან ნებისმიერი სხვა
+  სპეციალური დანიშნულების მქონე (მაგალითად, CI-სერვერების მიერ გამოყენებული) განშტოებების ისტორიაში*.
 
 * Keep the history *clean* and *simple*. *Just before you merge* your branch:
+* შეინარჩუნეთ ისტორიის *სისუფთავე* და *სიმარტივე*. ვიდრე განშტოების შერწყმას მოახდენდეთ:
 
     1. Make sure it conforms to the style guide and perform any needed actions
        if it doesn't (squash/reorder commits, reword messages etc.)
+    2. დარწმუნდით, რომ იგი შეესაბამება წინამდებარე სახლემძღვანელოს მითითებებს; თუ ეს ასე არ არის, შეასრულეთ საჭირო მოქმედებები
+       (გააერთიანეთ commit-ები ან შეცვალეთ მათი თანმიმდევრობა, ხელახლა უზრუნველყავით შეტყობინებები და სხვ.)
 
-    2. Rebase it onto the branch it's going to be merged to:
+    1. Rebase it onto the branch it's going to be merged to:
 
        ```shell
        [my-branch] $ git fetch
@@ -301,15 +318,34 @@ holds true that you should apply all of the above *before* pushing it.
        *(Note: This strategy is better suited for projects with short-running
        branches. Otherwise it might be better to occassionally merge the
        "main" branch instead of rebasing onto it.)*
+    1. მოახდინეთ მისი რებაზერიბა იმ განშტოებაზე, რომელთანაც უნდა მოხდეს შემდგომში მისი შერწყმა:
+
+       ```shell
+       [my-branch] $ git fetch
+       [my-branch] $ git rebase origin/main
+       # then merge # შემდეგ მოახდინეთ შერწყმა
+       ```
+
+       შედეგად ვიღებთ ძალიან მარტივ ისტორიას და განშტოებას,
+       რომელიც შესაძლებელია გამოყენებულ იქნეს უშუალოდ „main“ განშტოების ბოლოში.
+
+       *(შენიშვნა: ეს მეთოდი უკეთ შეეფერაბა მოკლევადიანი განშტოებებისაგან შემდგარ პროექტებს.
+       სხვა შემთხვევებში, შესაძლოა უმჯობესი იყოს, პერიოდულად მოახდინოთ „main“ განშტოების შერწყმა,
+       ნაცვლად მასზე რებაზირებისა.)*
+
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
+* თუკი თქვენი განშტოება შეიცავს ერთზე მეტ commit-ს, არ მოახდინოთ შერწყმა
+  დაჩქარებულად (*fast-forward*):
 
   ```shell
   # good - ensures that a merge commit is created
+  # კარგია - იძლევა გარანტიას, რომ შერწყმის commit-ი შეიქმნა
   $ git merge --no-ff my-branch
 
   # bad
+  # ცუდია
   $ git merge my-branch
   ```
 
