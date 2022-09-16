@@ -11,18 +11,18 @@
 - [Table of contents](#table-of-contents)
   - [სარჩევი](#სარჩევი)
   - [Branches](#branches)
-  - [განშტოებები (*Branches*)](#განშტოებები-branches)
+  - [განშტოებები (Branches)](#განშტოებები-branches)
   - [Commits](#commits)
-  - [Commit-ები](#commit-ები)
+  - [ქომიტები (Commits)](#ქომიტები-commits)
     - [Messages](#messages)
-    - [შეტყობინებები](#შეტყობინებები)
+    - [შეტყობინებები (Messages)](#შეტყობინებები-messages)
   - [Merging](#merging)
-  - [შერწყმა (*Merging*)](#შერწყმა-merging)
+  - [შერწყმა (Merging)](#შერწყმა-merging)
   - [Misc.](#misc)
-  - [სხვადასხვა](#სხვადასხვა)
+  - [სხვადასხვა (Misc.)](#სხვადასხვა-misc)
 
 ## Branches
-## განშტოებები (*Branches*)
+## განშტოებები (Branches)
 
 * Choose *short* and *descriptive* names:
 * შეარჩიეთ *მოკლე* და *აღწერითი* სახელები:
@@ -90,7 +90,7 @@
   ```
 
 ## Commits
-## Commit-ები
+## ქომიტები (Commits)
 
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
@@ -130,7 +130,7 @@ holds true that you should apply all of the above *before* pushing it.
 ისევ და ისევ მართებულია ზემოთ მოყვანილი რეკომენდაციების დაცვა, *ვიდრე* ატვირთვას განახორციელებდეთ.
 
 ### Messages
-### შეტყობინებები
+### შეტყობინებები (Messages)
 
 * Use the editor, not the terminal, when writing a commit message:
 * როდესაც წერთ commit-ის აღწერას, ბრძანებათა სტრიქონის (*ტერმინალის*) ნაცვლად გამოიყენეთ რედაქტორი:
@@ -248,7 +248,7 @@ holds true that you should apply all of the above *before* pushing it.
   [ამით,] მონიშნული commit-ები ავტომატურად გაერთიანდება.)
 
 ## Merging
-## შერწყმა (*Merging*)
+## შერწყმა (Merging)
 
 * **Do not rewrite published history.** The repository's history is valuable in
   its own right and it is very important to be able to tell *what actually
@@ -331,7 +331,7 @@ holds true that you should apply all of the above *before* pushing it.
   ```
 
 ## Misc.
-## სხვადასხვა
+## სხვადასხვა (Misc.)
 
 * There are various workflows and each one has its strengths and weaknesses.
   Whether a workflow fits your case, depends on the team, the project and your
