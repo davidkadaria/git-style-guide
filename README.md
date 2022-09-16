@@ -37,7 +37,9 @@ Translations are available in the following languages:
   - [Merging](#merging)
   - [შერწყმა (*Merging*)](#შერწყმა-merging)
   - [Misc.](#misc)
+  - [სხვადასხვა](#სხვადასხვა)
 - [License](#license)
+- [ლიცენზია](#ლიცენზია)
 - [Credits](#credits)
 
 ## Branches
@@ -350,33 +352,51 @@ holds true that you should apply all of the above *before* pushing it.
   ```
 
 ## Misc.
+## სხვადასხვა
 
 * There are various workflows and each one has its strengths and weaknesses.
   Whether a workflow fits your case, depends on the team, the project and your
   development procedures.
 
   That said, it is important to actually *choose* a workflow and stick with it.
+* არსებობს მთელი რიგი შრომითი პროცესები (*workflows*) და თითოეულს გააჩნია თავისი ძლიერი და სუსტი მხარეები.
+  შეესაბამება თუ არა ესა თუ ის შრომითი პროცესი თქვენს შემთხვევას, დამოკიდებულია თქვენს გუნდზე, პროექტზე და დეველოპმენტის
+  თქვენებურ მეთოდიკაზე.
+
+  ასე რომ, მნიშვნელოვანია *შეარჩიოთ* შრომითი პროცესი (*workflow*) და გულმოდგინეთ მიჰყვეთ მას.
 
 * *Be consistent.* This is related to the workflow but also expands to things
   like commit messages, branch names and tags. Having a consistent style
   throughout the repository makes it easy to understand what is going on by
   looking at the log, a commit message etc.
+* *იყავით თანმიმდევრული.* ეს შრომით პროცესს ეხება, მაგრამ ასევე ვრცელდება ისეთ საკითხებზე,
+  როგორიცაა commit-ის შეტყობინებები, განშტოებათა სახელები და ტეგები.
+  საცავის (*repository*) მასშტაბით თანმიმდევრული სტილის არსებობა
+  გაგიმარტივებთ სამუშაო წინსვლის (*პროგრესის*) იდენტიფიცირებას.
 
 * *Test before you push.* Do not push half-done work.
+* *მოახდინეთ ტესტირება, ვიდრე ატვირთავთ.* ნუ ატვირთავთ სანახევროდ შესრულებულ სამუშაოს.
 
 * Use [annotated tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_annotated_tags)
   for marking releases or other important points in the history. Prefer
   [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags)
   for personal use, such as to bookmark commits for future reference.
+* გამოიყენეთ [ანოტირებული ტეგები](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_annotated_tags) გამოშვებათა (*releases*) ან 
+  სხვა მნიშვნელოვანი პუნქტების აღნიშვნისათვის ისტორიაში.
+  უპირატესობა მიანიჭეთ [მსუბუქ ტეგებს](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags) პირადი გამოყენებისათვის,
+  როგორიცაა commit-ების ჩანიშვნა სამომავლო მითითებისათვის (*reference*).
 
 * Keep your repositories at a good shape by performing maintenance tasks
   occasionally:
+  თქვენი საცავების კარგ ფორმაში შენარჩუნებისათვის პერიოდულად შეასრულეთ
+  მოვლით-შენახვითი სამუშაოები:
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
   * [`git-fsck(1)`](http://git-scm.com/docs/git-fsck)
 
 # License
+# ლიცენზია
 
 ![cc license](http://i.creativecommons.org/l/by/4.0/88x31.png)
 
