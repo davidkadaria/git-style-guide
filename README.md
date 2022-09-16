@@ -4,12 +4,12 @@
 # Table of contents
 ## სარჩევი
 
-1. [Branches](#branches)
-2. [Commits](#commits)
-  1. [Messages](#messages)
-3. [Merging](#merging)
-4. [Misc.](#misc)
-5. [License](#license)
+1. [განშტოებები](#branches)
+2. [ქომითები](#commits)
+  1. [შეტყობინებები](#messages)
+3. [შერწყმა](#merging)
+4. [სხვადასხვა](#misc)
+5. [ლიცენზია](#license)
 
 ## Branches
 ## განშტოებები (Branches)
