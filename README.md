@@ -73,7 +73,7 @@
   თუკი არ გაქვთ მისი არწაშლის კონკრეტული მიზეზი.
 
   რჩევა: გაუშვით შემდეგი ბრძანება მთავარ („main“) განშტოებაზე ყოფნისას,
-  რათა იხილოთ შერწყმულ განშტოებათა სია:
+  რათა იხილოთ [მასთან] შერწყმულ განშტოებათა სია:
 
   ```shell
   $ git branch --merged | grep -v "\*"
@@ -105,17 +105,17 @@
 * Commit *early* and *often*. Small, self-contained commits are easier to
   understand and revert when something goes wrong.
 * განახორციელეთ ქომითები *დროულად* და *ხშირად*. მოკლე, თვითმყოფადი ქომითები მეტად მარტივად გასაგებია და
-  ამარტივებს უწინდელ მდგომარეობაში დაბრუნებას, თუკი რაიმე არასწორად მოხდება.
+  ამარტივებს უწინდელ მდგომარეობაში დაბრუნებას, თუკი რაიმე არასწორად წარიმართება.
 
 * Commits should be ordered *logically*. For example, if *commit X* depends
   on changes done in *commit Y*, then *commit Y* should come before *commit X*.
-* ქომითები *ლოგიკური* თანმიმდევრობით უნდა განხორციელდეს. მაგალითად, თუ *X ქომითი* დამოკიდებულია
-  *Y ქომითში* განხორციელებულ ცვლილებებზე, მაშინ *Y ქომითი* უნდა განხორციელდეს *X ქომითამდე*.
+* ქომითები *ლოგიკური* თანმიმდევრობით უნდა განხორციელდეს. მაგალითად, თუ *X-ქომითი* დამოკიდებულია
+  *Y-ქომითში* განხორციელებულ ცვლილებებზე, მაშინ *Y-ქომითი* უნდა განხორციელდეს *X-ქომითამდე*.
 
 Note: While working alone on a local branch that *has not yet been pushed*, it's
 fine to use commits as temporary snapshots of your work. However, it still
 holds true that you should apply all of the above *before* pushing it.
-შენიშვნა: ვიდრე მარტო მუშაობთ ადგილობრივ (*ლოკალურ*) განშტოებაზე, *რომლის ატვირთვაც (push) ჯერ არ მომხდარა*,
+შენიშვნა: ვიდრე მარტოდმარტო მუშაობთ ადგილობრივ (*ლოკალურ*) განშტოებაზე, *რომლის ატვირთვაც (push) ჯერ არ მომხდარა*,
 დასაშვებია ქომითების, როგორც თქვენი სამუშაოს დროებითი ჩანაწერების, გამოყენება. თუმცა,
 ისევ და ისევ მართებულია ზემოთ მოყვანილი რეკომენდაციების დაცვა, *სანამ* ატვირთვას მოახდენდეთ.
 
@@ -162,8 +162,8 @@ holds true that you should apply all of the above *before* pushing it.
   description. It should be wrapped to *72 characters* and explain *why*
   the change is needed, *how* it addresses the issue and what *side-effects*
   it might have.
-* ამის შემდეგ უნდა მოდიოდეს ცარიელი სტრიქონი, რომელსაც მოსდევს უფრო საგულდაგულო აღწერა.
-  აღწერა უნდა შედგებოდეს [მაქსიმუმ] *72 სიმბოლოსაგან* და უნდა განმარტავდეს,
+* შემდგომ ამისა უნდა მოდიოდეს ცარიელი სტრიქონი, რომელსაც მოსდევს უფრო საგულდაგულო აღწერა.
+  აღწერა უნდა შედგებოდეს [არაუმეტეს] *72 სიმბოლოსაგან* და უნდა განმარტავდეს,
   თუ *რატომ* იყო საჭირო ცვლილებები, *როგორ* მოხდა პრობლემის გადაჭრა და
   რა *გვერდითი მოვლენები* შეიძლება მოჰყვეს ამას.
 
@@ -212,12 +212,12 @@ holds true that you should apply all of the above *before* pushing it.
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
   also be stated in the message of *commit A*.
-* თუ *A ქომითი* დამოკიდებულია *B ქომითზე*,
-  ეს დამოკიდებულება უნდა აღიწეროს *A ქომითის* შეტყობინებაში.
+* თუკი *A-ქომითი* დამოკიდებულია *B-ქომითზე*,
+  ეს დამოკიდებულება უნდა აღიწეროს *A-ქომითის* შეტყობინებაში.
   *ქომითებზე მითითებისას გამოიყენეთ SHA1-ჰეში*.
 
-  ანალოგიურად, თუ *A ქომითი* წყვეტს *B ქომითის* მიერ წარმოქმნილ პრობლემას,
-  ამის ფორმულირებაც *A ქომითის* შეტყობინებაში უნდა მოხდეს.
+  ანალოგიურად, თუ *A-ქომითი* წყვეტს *B-ქომითის* მიერ წარმოქმნილ პრობლემას,
+  ამის ფორმულირებაც *A-ქომითის* შეტყობინებაში უნდა მოხდეს.
 
 * If a commit is going to be squashed to another commit use the `--squash` and
   `--fixup` flags respectively, in order to make the intention clear:
@@ -241,8 +241,8 @@ holds true that you should apply all of the above *before* pushing it.
   happened*. Altering published history is a common source of problems for
   anyone working on the project.
 * **ნუ მოახდენთ გამოქვეყნებული ისტორიის გადამუშავებას.** საცავის (*repository*) ისტორია თავისთავად ღირებულია, და
-  ძალიან მნიშვნელოვანია, შეგეძლოთ დანახვა იმისა, *თუ რა მოხდა სინამდვილეში*.
-  გამოქვეყნებული ისტორიის ცვლილება პრობლემათა საერთო წყაროა ყველასთვის,
+  ძალიან მნიშვნელოვანია შეგეძლოთ დანახვა იმისა, *თუ რა მოხდა სინამდვილეში*.
+  გამოქვეყნებული ისტორიის ცვლილება პრობლემათა გავრცელებული წყაროა ყველასთვის,
   ვინც პროექტზე მუშაობს.
 
 * However, there are cases where rewriting history is legitimate. These are
@@ -269,7 +269,7 @@ holds true that you should apply all of the above *before* pushing it.
     1. Make sure it conforms to the style guide and perform any needed actions
        if it doesn't (squash/reorder commits, reword messages etc.)
     1. დარწმუნდით, რომ იგი შეესაბამება წინამდებარე სახლემძღვანელოს მითითებებს; ხოლო თუ ეს ასე არ არის, შეასრულეთ ნებისმიერი საჭირო მოქმედება
-       (გააერთიანეთ ქომითები ან შეცვალეთ მათი თანმიმდევრობა, ხელახლა უზრუნველყავით შეტყობინებები და სხვ.)
+       (გააერთიანეთ ქომითები ან შეცვალეთ მათი თანმიმდევრობა, ხელახლა უზრუნველყავით შეტყობინებები და სხვ.).
 
     2. Rebase it onto the branch it's going to be merged to:
     2. მოახდინეთ მისი რებაზერიბა იმ განშტოებაზე, რომელთანაც შემდგომში მისი შერწყმა უნდა მოხდეს:
@@ -324,7 +324,7 @@ holds true that you should apply all of the above *before* pushing it.
   throughout the repository makes it easy to understand what is going on by
   looking at the log, a commit message etc.
 * *იყავით თანმიმდევრული.* ეს შრომით პროცესს ეხება, მაგრამ ასევე ვრცელდება ისეთ საკითხებზე,
-  როგორიცაა ქომითის შეტყობინებები, განშტოებათა სახელები და ტეგები.
+  როგორიცაა - ქომითის შეტყობინებები, განშტოებათა სახელები და ტეგები.
   საცავის მასშტაბით თანმიმდევრული სტილის არსებობა
   გაგიმარტივებთ სამუშაოს პროგრესის იდენტიფიცირებას.
 
