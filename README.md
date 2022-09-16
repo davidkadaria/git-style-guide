@@ -1,33 +1,15 @@
 # Git Style Guide
 # Git-ის სტილისტიკის სახელმძღვანელო
 
-Translations are available in the following languages:
-წინამდებარე სახელმძღვანელოს თარგმანები ხელმისაწვდომია შემდეგ ენებზე:
-
-* [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
-* [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
-* [English](https://github.com/agis/git-style-guide)
-* [French](https://github.com/pierreroth64/git-style-guide)
-* [German](https://github.com/runjak/git-style-guide)
-* [Greek](https://github.com/grigoria/git-style-guide)
-* [Italian](https://github.com/vincendep/git-style-guide)
-* [Japanese](https://github.com/objectx/git-style-guide)
-* [Korean](https://github.com/ikaruce/git-style-guide)
-* [Polish](https://github.com/mbiesiad/git-style-guide/tree/pl_PL)
-* [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
-* [Russian](https://github.com/alik0211/git-style-guide)
-* [Spanish](https://github.com/jeko2000/git-style-guide)
-* [Thai](https://github.com/zondezatera/git-style-guide)
-* [Turkish](https://github.com/CnytSntrk/git-style-guide)
-* [Ukrainian](https://github.com/denysdovhan/git-style-guide)
+> დედანი: [Agis/Git-Style-Guide](https://github.com/agis/git-style-guide)
 
 # Table of contents
-# სარჩევი
+## სარჩევი
 
 - [Git Style Guide](#git-style-guide)
 - [Git-ის სტილისტიკის სახელმძღვანელო](#git-ის-სტილისტიკის-სახელმძღვანელო)
 - [Table of contents](#table-of-contents)
-- [სარჩევი](#სარჩევი)
+  - [სარჩევი](#სარჩევი)
   - [Branches](#branches)
   - [განშტოებები (*Branches*)](#განშტოებები-branches)
   - [Commits](#commits)
@@ -38,9 +20,6 @@ Translations are available in the following languages:
   - [შერწყმა (*Merging*)](#შერწყმა-merging)
   - [Misc.](#misc)
   - [სხვადასხვა](#სხვადასხვა)
-- [License](#license)
-- [ლიცენზია](#ლიცენზია)
-- [Credits](#credits)
 
 ## Branches
 ## განშტოებები (*Branches*)
@@ -394,16 +373,3 @@ holds true that you should apply all of the above *before* pushing it.
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
   * [`git-fsck(1)`](http://git-scm.com/docs/git-fsck)
-
-# License
-# ლიცენზია
-
-![cc license](http://i.creativecommons.org/l/by/4.0/88x31.png)
-
-This work is licensed under a [Creative Commons Attribution 4.0
-International license](https://creativecommons.org/licenses/by/4.0/).
-
-# Credits
-
-Agis Anastasopoulos / [@agisanast](https://twitter.com/agisanast) / http://agis.io
-... and [contributors](https://github.com/agis-/git-style-guide/graphs/contributors)!
