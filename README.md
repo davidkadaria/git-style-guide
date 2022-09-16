@@ -1,25 +1,15 @@
 # Git Style Guide
 # Git-ის სტილისტიკის სახელმძღვანელო
 
-> დედანი: [Agis/Git-Style-Guide](https://github.com/agis/git-style-guide)
-
 # Table of contents
 ## სარჩევი
 
-- [Git Style Guide](#git-style-guide)
-- [Git-ის სტილისტიკის სახელმძღვანელო](#git-ის-სტილისტიკის-სახელმძღვანელო)
-- [Table of contents](#table-of-contents)
-  - [სარჩევი](#სარჩევი)
-  - [Branches](#branches)
-  - [განშტოებები (Branches)](#განშტოებები-branches)
-  - [Commits](#commits)
-  - [ქომითები (Commits)](#ქომითები-commits)
-    - [Messages](#messages)
-    - [შეტყობინებები (Messages)](#შეტყობინებები-messages)
-  - [Merging](#merging)
-  - [შერწყმა (Merging)](#შერწყმა-merging)
-  - [Misc.](#misc)
-  - [სხვადასხვა (Misc.)](#სხვადასხვა-misc)
+1. [Branches](#branches)
+2. [Commits](#commits)
+  1. [Messages](#messages)
+3. [Merging](#merging)
+4. [Misc.](#misc)
+5. [License](#license)
 
 ## Branches
 ## განშტოებები (Branches)
@@ -64,7 +54,7 @@
   გამოიყენეთ სახელდების შემდეგი კანონზომიერება:
 
   ```shell
-  $ git checkout -b feature-a/main # team-wide branch # მთელი გუნდისათვის საერთო განშტოება
+  $ git checkout -b feature-a/main   # team-wide branch  # მთელი გუნდისათვის საერთო განშტოება
   $ git checkout -b feature-a/maria  # Maria's personal branch # მარიას პირადი განშტოება
   $ git checkout -b feature-a/nick   # Nick's personal branch # ნიკის პირადი განშტოება
   ```
@@ -175,11 +165,12 @@ holds true that you should apply all of the above *before* pushing it.
 * ამის შემდეგ უნდა მოდიოდეს ცარიელი სტრიქონი, რომელსაც მოსდევს უფრო საგულდაგულო აღწერა.
   აღწერა უნდა შედგებოდეს [მაქსიმუმ] *72 სიმბოლოსაგან* და უნდა განმარტავდეს,
   თუ *რატომ* იყო საჭირო ცვლილებები, *როგორ* მოხდა პრობლემის გადაჭრა და
-  რა *გვერდითი მოვლენები* შეიძლება მოჰყვეს ამას. 
+  რა *გვერდითი მოვლენები* შეიძლება მოჰყვეს ამას.
 
   It should also provide any pointers to related resources (eg. link to the
   corresponding issue in a bug tracker):
-  საგულდაგულო აღწერაში ასევე მოცემული უნდა იყოს ინფორმაცია გამოყენებული რესურსების შესახებ (მაგ. შესაბამისი შეცდომის/პრობლემის (*issue*) ბმული):
+  საგულდაგულო აღწერაში ასევე მოცემული უნდა იყოს ინფორმაცია გამოყენებული რესურსების შესახებ
+  (მაგ. შესაბამისი შეცდომის/პრობლემის (*issue*) ბმული):
 
   ```text
   Short (50 chars or fewer) summary of changes
@@ -230,13 +221,6 @@ holds true that you should apply all of the above *before* pushing it.
 
 * If a commit is going to be squashed to another commit use the `--squash` and
   `--fixup` flags respectively, in order to make the intention clear:
-
-  ```shell
-  $ git commit --squash f387cab2
-  ```
-
-  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
-  squashed automatically.)*
 * თუკი ქომითი უნდა გაერთიანდეს (*squash*) სხვა ქომითთან, გამოიყენეთ `--squash` და
   `--fixup` არგუმენტები სათანადოდ, რათა [თქვენი] მიზანი უფრო ნათელი გახადოთ:
 
@@ -244,6 +228,8 @@ holds true that you should apply all of the above *before* pushing it.
   $ git commit --squash f387cab2
   ```
 
+  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
+  squashed automatically.)*
   (რჩევა: რებაზირების (*rebasing*) დროს გამოიყენეთ `--autosquash` არგუმენტი.
   [ამით,] მონიშნული ქომითები ავტომატურად გაერთიანდება.)
 
@@ -282,24 +268,11 @@ holds true that you should apply all of the above *before* pushing it.
 
     1. Make sure it conforms to the style guide and perform any needed actions
        if it doesn't (squash/reorder commits, reword messages etc.)
-    2. დარწმუნდით, რომ იგი შეესაბამება წინამდებარე სახლემძღვანელოს მითითებებს; ხოლო თუ ეს ასე არ არის, შეასრულეთ ნებისმიერი საჭირო მოქმედება
+    1. დარწმუნდით, რომ იგი შეესაბამება წინამდებარე სახლემძღვანელოს მითითებებს; ხოლო თუ ეს ასე არ არის, შეასრულეთ ნებისმიერი საჭირო მოქმედება
        (გააერთიანეთ ქომითები ან შეცვალეთ მათი თანმიმდევრობა, ხელახლა უზრუნველყავით შეტყობინებები და სხვ.)
 
-    3. Rebase it onto the branch it's going to be merged to:
-
-       ```shell
-       [my-branch] $ git fetch
-       [my-branch] $ git rebase origin/main
-       # then merge
-       ```
-
-       This results in a branch that can be applied directly to the end of the
-       "main" branch and results in a very simple history.
-
-       *(Note: This strategy is better suited for projects with short-running
-       branches. Otherwise it might be better to occassionally merge the
-       "main" branch instead of rebasing onto it.)*
-    4. მოახდინეთ მისი რებაზერიბა იმ განშტოებაზე, რომელთანაც შემდგომში მისი შერწყმა უნდა მოხდეს:
+    2. Rebase it onto the branch it's going to be merged to:
+    2. მოახდინეთ მისი რებაზერიბა იმ განშტოებაზე, რომელთანაც შემდგომში მისი შერწყმა უნდა მოხდეს:
 
        ```shell
        [my-branch] $ git fetch
@@ -307,13 +280,17 @@ holds true that you should apply all of the above *before* pushing it.
        # then merge # შემდგომ ამისა, მოახდინეთ შერწყმა
        ```
 
+       This results in a branch that can be applied directly to the end of the
+       "main" branch and results in a very simple history.
        შედეგად ვიღებთ ძალიან მარტივ ისტორიას და განშტოებას,
        რომელიც შესაძლებელია გამოყენებულ იქნეს უშუალოდ „main“ განშტოების ბოლოში.
 
+       *(Note: This strategy is better suited for projects with short-running
+       branches. Otherwise it might be better to occassionally merge the
+       "main" branch instead of rebasing onto it.)*
        *(შენიშვნა: ეს მეთოდი უკეთ შეეფერაბა მოკლევადიანი განშტოებებისაგან შემდგარ პროექტებს.
        სხვა შემთხვევებში შესაძლოა უმჯობესი იყოს, პერიოდულად მოახდინოთ „main“ განშტოების შერწყმა,
        ნაცვლად მასზე რებაზირებისა.)*
-
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
@@ -321,12 +298,10 @@ holds true that you should apply all of the above *before* pushing it.
   დაჩქარებულად (*fast-forward*):
 
   ```shell
-  # good - ensures that a merge commit is created
-  # კარგია - იძლევა გარანტიას, რომ შერწყმის ქომითი შეიქმნა
+  # good - ensures that a merge commit is created # კარგია - იძლევა გარანტიას, რომ შერწყმის ქომითი შეიქმნა
   $ git merge --no-ff my-branch
 
-  # bad
-  # ცუდია
+  # bad # ცუდია
   $ git merge my-branch
   ```
 
@@ -367,9 +342,17 @@ holds true that you should apply all of the above *before* pushing it.
 
 * Keep your repositories at a good shape by performing maintenance tasks
   occasionally:
-  თქვენი საცავების კარგ ფორმაში შენარჩუნებისათვის პერიოდულად შეასრულეთ
+* თქვენი საცავების კარგ ფორმაში შენარჩუნებისათვის პერიოდულად შეასრულეთ
   მოვლით-შენახვითი სამუშაოები:
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
   * [`git-fsck(1)`](http://git-scm.com/docs/git-fsck)
+
+## License
+## ლიცენზია
+
+![cc license](http://i.creativecommons.org/l/by/4.0/88x31.png)
+
+This work is licensed under a [Creative Commons Attribution 4.0
+International license](https://creativecommons.org/licenses/by/4.0/).
