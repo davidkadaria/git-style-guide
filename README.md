@@ -35,9 +35,9 @@
   სიტყვების ერთმანეთისაგან გამოსაყოფად გამოიყენეთ ტირეები.
 
   ```shell
-  $ git checkout -b new-feature      # good # კარგია
-  $ git checkout -b T321-new-feature # good (Phabricator task id) # კარგია (Phabricator task id)
-  $ git checkout -b New_Feature      # bad # ცუდია
+  $ git checkout -b new-feature      # კარგია
+  $ git checkout -b T321-new-feature # კარგია (Phabricator task id)
+  $ git checkout -b New_Feature      # ცუდია
   ```
 
 * როდესაც *ერთსა და იმავე* ფუნქციონალზე რამდენიმე ადამიანი მუშაობს, შესაძლოა მოსახერხებელი იყოს,
